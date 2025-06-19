@@ -1,22 +1,24 @@
 # Sistema de Control de Calificaciones en Línea
 
-Este proyecto fue desarrollado en Java como parte de un examen grupal.
+Proyecto realizado en Java como parte del examen práctico de programación orientada a objetos.
 
-## Autores
+## ✅ Funcionalidades principales
+
+- Registro de alumnos y profesores
+- Asignación de notas (con Random)
+- Cálculo de promedios (con Math.round)
+- Reportes de clase: promedio general y aprobados
+- Registro de asistencias (clase anidada)
+- Uso de herencia, métodos sobrecargados, atributos static
+
+## 👨‍💻 Autores del Grupo 9
+
 - Edwin Marcos Cornejo Peralta - N00393414  
 - Ricardo Rojas Castro – N00460538  
 - Jahir Rodriguez Barreto – N00250606  
-- Erick Navarro Blancas – N00410857  
+- Erick Navarro Blancas – N00410857
 
-## Descripción
-Permite registrar alumnos, asignarles notas en diferentes cursos y obtener estadísticas de rendimiento.
+## 📌 Lenguaje y entorno
 
-## Funcionalidades
-- Registro de alumnos y profesores
-- Promedios individuales y generales
-- Conteo de aprobados
-- Asistencia por curso
-- Uso de clases anidadas, herencia, static, Random, Math.round, etc.
-
-## Lenguaje
 - Java SE 21
+- Eclipse IDE for Java Developers

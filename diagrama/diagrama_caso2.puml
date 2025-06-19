@@ -1,0 +1,59 @@
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam classHeaderColor #D2B4DE
+skinparam classBorderColor #8E44AD
+
+' Clase Base Abstracta (implícita)
+class Persona {
+    # nombre: String
+    # dni: String
+    + getNombre(): String
+    + getDni(): String
+}
+
+class Alumno extends Persona {
+    - notas: ArrayList<Double>
+    + agregarNota(double): void
+    + agregarNota(double...): void
+    + calcularPromedio(): double
+}
+
+class Profesor extends Persona {
+    - alumnos: ArrayList<Alumno>
+    + registrarAlumno(Alumno): void
+    + consultarPromedio(Alumno): double
+}
+
+class Curso {
+    - nombre: String
+    - alumnos: ArrayList<Alumno>
+    + {static} totalCursos: int
+    + {static} totalAlumnos: int
+    + agregarAlumno(Alumno): void
+}
+
+' Clase Anidada NO Estática
+class Asistencia <<Inner Class>> {
+    - asistenciaMap: Map<Alumno, Boolean>
+    + registrarAsistencia(Alumno, boolean): void
+    + mostrarAsistencia(): void
+}
+
+' Clase de Utilidad con métodos estáticos
+class Reporte <<Utility>> {
+    + {static} promedioGeneral(List<Alumno>): double
+    + {static} contarAprobados(List<Alumno>): int
+}
+
+' --- Relaciones ---
+Curso "1" o-- "0..*" Alumno : inscribe
+Profesor "1" -- "0..*" Alumno : registra
+
+' La clase Asistencia está contenida y depende de una instancia de Curso
+Curso +-- "1" Asistencia
+
+' La clase Reporte depende de la clase Alumno para sus cálculos
+Reporte ..> Alumno : analiza
+
+@enduml
